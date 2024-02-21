@@ -12,9 +12,25 @@
             margin: 2em;
         }
 
-        .button {
+        button {
             height: 8em;
-            width: 40em;
+            width: 40em; 
+            transition: opacity 0.3s ease;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid white;
+            color: #fff;
+            cursor: pointer;
+            line-height: 50px;
+        }
+
+        button:hover {
+            opacity: 0.6;
+        }
+
+        button:active, button:focus {
+            background-color: rgba(255, 255, 255, 1);
+            border: 3px solid purple;
         }
 
         .centered {
@@ -24,13 +40,24 @@
         }
 
         .centered-text {
+            font-size: 3em;
             font-family:'Courier New', Courier, monospace;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%;
-            color: #fff; /* Set font color to white */
-}
+            text-align: center;
+            color: #fff;
+        }
+
+        .button-text {
+            font-size: 30px;
+            display: inline-block;
+        }
+
+        .submit-text {
+            font-size: 30px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body background="InitialMaterial/assets/background.jpg">
@@ -38,16 +65,19 @@
         max-width="20%", style="display: block; margin: 0 auto;">
     <div>
         <div class="centered-text">
-            <p>This Should be in the Middle</p>
+            <p>Who Will Win the Premier League?</p>
         </div>
         <div class="centred-button">
-            <button class="button">Option1</button>
+            <button class="button"><span class="button-text">Liverpool</span></button>
         </div>
         <div class="centred-button">
-            <button class="button">Option2</button>
+            <button class="button"><span class="button-text">Man City</span></button>
         </div>
         <div class="centred-button">
-            <button class="button">Option3</button>
+            <button class="button"><span class="button-text">Arsenal</span></button>
+        </div>
+        <div class="centred-button">
+            <button class="button"><span class="submit-text">Submit</span></button>
         </div>
     </div>
 </body>

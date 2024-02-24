@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make a Selection</title>
 
-    <style>
+    <!-- <style>
         .centred-button {
             margin: 0 auto;
             text-align: center;
@@ -39,16 +39,6 @@
             width: 100%;
         }
 
-        .centered-text {
-            font-size: 3em;
-            font-family:'Courier New', Courier, monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-        }
-
         .button-text {
             font-size: 30px;
             display: inline-block;
@@ -58,27 +48,29 @@
             font-size: 30px;
             font-weight: bold;
         }
-    </style>
+    </style> -->
+    <link href="style.css" type="text/css" rel="stylesheet">
 </head>
 <body background="InitialMaterial/assets/background.jpg">
     <img src="InitialMaterial/assets/logo.png", width = "20%", 
-        max-width="20%", style="display: block; margin: 0 auto;">
+        max-width="20%">
     <div>
         <div class="centered-text">
             <p>Who Will Win the Premier League?</p>
         </div>
-        <div class="centred-button">
-            <button class="button"><span class="button-text">Liverpool</span></button>
-        </div>
-        <div class="centred-button">
-            <button class="button"><span class="button-text">Man City</span></button>
-        </div>
-        <div class="centred-button">
-            <button class="button"><span class="button-text">Arsenal</span></button>
-        </div>
-        <div class="centred-button">
-            <button class="button"><span class="submit-text">Submit</span></button>
+        <div>
+            <form>
+                <input type="radio" value ="Liverpool" class="radio", name="options", id="b1" checked>
+                <label class="label" for="b1">Liverpool</label><br>
+                <input type="radio" value ="Man City" class="radio", name="options", id="b2">
+                <label class="label" for="b2">Man City</label><br>
+                <input type="radio" value ="Arsenal" class="radio", name="options", id="b3">
+                <label class="label" for="b3">Arsenal</label><br>
+                <button type="button" onclick="submitForm()">Submit</button>
+            </form>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

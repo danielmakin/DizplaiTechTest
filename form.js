@@ -8,7 +8,7 @@ app.set('view engine', 'ejs');
 
 
 app.use(express.json()); // accept data in json form
-app.use(express.urlencoded())
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('main'));
 
 // Read the JSON File
@@ -24,8 +24,12 @@ app.get('/form', (req, res) => {
     res.sendFile(__dirname + '/main/index.html');
 });
 
-app.post('/formPost', (req, res) =>{
-    console.log(req.body);
+app.post('/form', (req, res) =>{
+
+    const formData = req.body;
+    console.log('Form data received:', formData);
+
+    res.redirect("/results.html");
 });
 
 app.listen(port, () =>{

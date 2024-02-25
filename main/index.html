@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Selection</title>
+
+    <!-- <style>
+        .centred-button {
+            margin: 0 auto;
+            text-align: center;
+            margin: 2em;
+        }
+
+        button {
+            height: 8em;
+            width: 40em; 
+            transition: opacity 0.3s ease;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid white;
+            color: #fff;
+            cursor: pointer;
+            line-height: 50px;
+        }
+
+        button:hover {
+            opacity: 0.6;
+        }
+
+        button:active, button:focus {
+            background-color: rgba(255, 255, 255, 1);
+            border: 3px solid blue;
+        }
+
+        .centered {
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .button-text {
+            font-size: 30px;
+            display: inline-block;
+        }
+
+        .submit-text {
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style> -->
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body background="InitialMaterial/assets/background.jpg">
+    <img src="InitialMaterial/assets/logo.png", width = "20%", 
+        max-width="20%">
+    <div>
+        <div class="centered-text">
+            <p>Who will win the Premier League?</p>
+        </div>
+        <div>
+            <form>
+                <input type="radio" value ="Liverpool" class="radio", name="options", id="1" checked>
+                <label class="label" for="b1">Liverpool</label><br>
+                <input type="radio" value ="Man City" class="radio", name="options", id="2">
+                <label class="label" for="b2">Man City</label><br>
+                <input type="radio" value ="Arsenal" class="radio", name="options", id="3">
+                <label class="label" for="b3">Arsenal</label><br>
+                <button type="button" onclick="submitForm()">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

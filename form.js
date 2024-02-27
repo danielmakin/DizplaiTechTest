@@ -29,8 +29,9 @@ app.get('/form', (req, res) => {
 });
 
 app.get('/api/question', (req, res)=> {
-    jdata = jdata.polls[jdata.polls.findIndex(obj => obj.optionId === 1)];
-    res.json(jdata)
+    polls = jdata.polls;
+    poll = polls[polls.findIndex(obj => obj.pollId === 1)];
+    res.json(poll);
 });
 
 app.post('/form/results', (req, res) =>{
@@ -66,11 +67,7 @@ function process_results(all_results, new_result){
     const jsonString = JSON.stringify(all_results, null, 2); // Convert JSON object to string with indentation
 
     fs.writeFile('results.json', jsonString, 'utf8', (err) => {
-    if (err) {
-        console.error('Error writing JSON file:', err);
-    } else {
-        console.log('JSON file has been saved.');
-    }
+    if (err) {console.error('Error writing JSON file:', err);}
     });
 }
 

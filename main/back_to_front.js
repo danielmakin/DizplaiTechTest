@@ -1,10 +1,16 @@
 function update_radio_buttons(){
+
+    
     fetch('api/question')
     .then(response => response.json())
     .then(data => {
+
         // Set the Title Question
         const title = document.getElementById("question");
         title.textContent = data.question;
+
+        const id = document.getElementById("pollId");
+        id.textContent = data.pollId;
 
         // Loop through each object in data
         options = data.options;

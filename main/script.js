@@ -1,15 +1,16 @@
 function submitForm(){
     // Get form data
     var selectedOption = document.querySelector('input[name="options"]:checked').id;
+    var pollId = document.getElementById("pollId")
      // Convert form data to JSON object
     jsonData = {}
-    jsonData['option'] = selectedOption;
-    fetch("http://localhost:5000/form", {
+    jsonData['optionId'] = selectedOption;
+    jsonData['pollId'] = pollId.textContent;
+    fetch("http://localhost:5000/form/results", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(jsonData)
         })
-    alert(JSON.stringify(jsonData));
 }

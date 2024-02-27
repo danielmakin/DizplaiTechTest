@@ -56,21 +56,22 @@
         max-width="20%">
     <div>
         <div class="centered-text">
-            <p>Who will win the Premier League?</p>
+            <p id="question">Who will win the Premier League?</p>
         </div>
         <div>
             <form>
                 <input type="radio" value ="Liverpool" class="radio", name="options", id="1" checked>
-                <label class="label" for="b1">Liverpool</label><br>
+                <label class="label" for="1">Liverpool</label><br>
                 <input type="radio" value ="Man City" class="radio", name="options", id="2">
-                <label class="label" for="b2">Man City</label><br>
+                <label class="label" for="2">Man City</label><br>
                 <input type="radio" value ="Arsenal" class="radio", name="options", id="3">
-                <label class="label" for="b3">Arsenal</label><br>
+                <label class="label" for="3">Arsenal</label><br>
                 <button type="button" onclick="submitForm()">Submit</button>
             </form>
         </div>
     </div>
 
     <script src="script.js"></script>
+    <script src="back_to_front.js"></script>
 </body>
 </html>

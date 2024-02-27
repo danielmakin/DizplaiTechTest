@@ -11,17 +11,25 @@ app.use(express.json()); // accept data in json form
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('main'));
 
+let jdata;
+
 // Read the JSON File
 fs.readFile("data.json", 'utf8', (err, data) => {
     if (err) {
         console.error('Error reading file:', err);
         return;
     }
+    jdata = JSON.parse(data);
+    console.log(jdata);
 });
 
 // Route to render the HTML form
 app.get('/form', (req, res) => {
     res.sendFile(__dirname + '/main/index.html');
+});
+
+app.get('/api/question', (req, res)=> {
+    res.json(jdata)
 });
 
 app.post('/form', (req, res) =>{

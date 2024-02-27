@@ -11,5 +11,5 @@ function submitForm(){
             },
             body: JSON.stringify(jsonData)
         })
-    alert("Data Sent")
+    alert(JSON.stringify(jsonData));
 }

@@ -5,6 +5,8 @@ function update_radio_buttons(){
     .then(response => response.json())
     .then(data => {
 
+        console.log(data);
+
         // Set the Title Question
         const title = document.getElementById("question");
         title.textContent = data.question;

@@ -1,17 +1,21 @@
 {
-  "pollId": 1,
-  "options": [
+  "polls": [
     {
-      "optionId": 1,
-      "optionChosen": 3
-    },
-    {
-      "optionId": 2,
-      "optionChosen": 0
-    },
-    {
-      "optionId": 3,
-      "optionChosen": 1
+      "pollId": 1,
+      "options": [
+        {
+          "optionId": 1,
+          "optionChosen": 4
+        },
+        {
+          "optionId": 2,
+          "optionChosen": 10
+        },
+        {
+          "optionId": 3,
+          "optionChosen": 2
+        }
+      ]
     }
   ]
 }

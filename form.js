@@ -29,6 +29,7 @@ app.get('/form', (req, res) => {
 });
 
 app.get('/api/question', (req, res)=> {
+    jdata = jdata.polls[jdata.polls.findIndex(obj => obj.optionId === 1)];
     res.json(jdata)
 });
 
@@ -51,7 +52,11 @@ app.post('/form/results', (req, res) =>{
 
 function process_results(all_results, new_result){
     // Passes in the JSON data from the results file and the form.
-    const options = all_results.options;
+    // We need to get the Poll from the Id
+    polls = all_results.polls;
+    i = polls.findIndex(obj => obj.pollId === parseInt(new_result.pollId));
+
+    const options = polls[i].options;
     const index = options.findIndex(obj => obj.optionId === parseInt(new_result.optionId));
 
     // Modify the Item and Write to a File

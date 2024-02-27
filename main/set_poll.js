@@ -1,6 +1,5 @@
 function update_radio_buttons(){
-
-    
+    // The Function of this Routine is to allow the Radiobuttons to be given the value from the JSON file
     fetch('api/question')
     .then(response => response.json())
     .then(data => {
@@ -28,15 +27,18 @@ function update_radio_buttons(){
                 }
         });
 
+        // Removes any extra buttons if they are not used in the options
         for (let i=options.length + 1; i<=5; i++){
             document.getElementById(i).remove();
             document.querySelector('label[for="' + (i) + '"]').style.display = "none";
         }
 
     })
+    // Error Catching
     .catch(error => console.error("Error Fetching Data: ". error));
 }
 
+// Allows this Function to be Activated
 window.addEventListener('DOMContentLoaded', (event) => {
     update_radio_buttons();
 });

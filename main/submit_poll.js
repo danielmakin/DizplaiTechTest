@@ -8,7 +8,7 @@ function submitForm(){
     }
     var pollId = document.getElementById("pollId")
     document.getElementById("question").textContent = "Thank you for your response";
-     // Convert form data to JSON object
+     // Prepare to send the data to the Back end as a JSON file
     jsonData = {}
     jsonData['optionId'] = selectedOption;
     jsonData['pollId'] = pollId.textContent;
@@ -27,9 +27,11 @@ function submitForm(){
             console.log("File Not Saved");
         }
 
+        // Stops the user pressing Submit after the option has been submitted
         var submit = document.getElementById("submit")
         submit.classList.add("hidden");
-
+        
+        // Sumbits the Keys needed to retrieve the data requested
         const queryString = Object.entries(jsonData)
         .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
         .join('&');
@@ -49,14 +51,11 @@ function submitForm(){
                     } else {
                         console.error('Radio button or label not found for option ' + (index + 1));
                     }
+                // This is so that the outputted results don't appear as radiobuttons
                 radioButton.checked = false;
                 radioButton.disabled = true;
             });
         });
 
     });
-
-
-    // Now get the results
-    // Construct the query string
 }

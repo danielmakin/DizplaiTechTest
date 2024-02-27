@@ -2,6 +2,7 @@ function submitForm(){
     // Get form data
     var selectedOption = document.querySelector('input[name="options"]:checked').id;
     var pollId = document.getElementById("pollId")
+    document.getElementById("question").textContent = "Thank you for your response";
      // Convert form data to JSON object
     jsonData = {}
     jsonData['optionId'] = selectedOption;
@@ -20,6 +21,9 @@ function submitForm(){
         }else{
             console.log("File Not Saved");
         }
+
+        var submit = document.getElementById("submit")
+        submit.classList.add("hidden");
 
         const queryString = Object.entries(jsonData)
         .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
@@ -40,6 +44,8 @@ function submitForm(){
                     } else {
                         console.error('Radio button or label not found for option ' + (index + 1));
                     }
+                radioButton.checked = false;
+                radioButton.disabled = true;
             });
         });
 

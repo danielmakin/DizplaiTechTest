@@ -1,10 +1,24 @@
+/* input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+} */
+
+@font-face {
+    font-family: MyCustomFont;
+    src: url('InitialMaterial/assets/Outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+  }
+  
+  body {
+    font-family: MyCustomFont, Arial, sans-serif; /* Use the custom font */
+  }
+
 body{
     margin: 0;
     justify-content: center;
     align-items: center;
     padding: 0;
     color: #fff;
-    font-family:'Courier New', Courier, monospace;
+    /* font-family:'Courier New', Courier, monospace; */
     text-align: center;
 }
 
@@ -16,3 +30,51 @@ body{
     text-align: center;
     color: #fff;
 }
+
+.hidden {
+    display: none;
+}
+
+.radio{
+    appearance: none;
+    display: block;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0.8em;
+    padding: 10px 20px;
+}
+
+label{
+    display: inline-block;
+    width: 12em;
+    height: 3em;
+    line-height: 3em;
+    /* padding: 15px 150px; */
+    background-color: rgba(255, 255, 255, 0.1); /* Background color with opacity */
+    color: #fff;
+    border-radius: 10px;
+    border: 2px solid;
+    font-size: 2em;
+    text-overflow: ellipsis;
+}
+
+.submit-button{
+    background-color: rgba(255, 255, 255, 1); /* Background color with opacity */
+    color: #45009e;
+    margin-top: 1.2em;
+    border-radius: 10px;
+    border-color: rgb(41, 0, 75);
+    border: 2px solid;
+    font-size: 2em;
+
+    width: 12em;
+    height: 3em;
+    line-height: 3em;
+    text-align: center;
+}
+
+
+.radio:checked + label{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+

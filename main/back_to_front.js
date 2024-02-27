@@ -35,5 +35,3 @@ function update_radio_buttons(){
 window.addEventListener('DOMContentLoaded', (event) => {
     update_radio_buttons();
 });
-
-// JavaScript code to set existing labels dynamically

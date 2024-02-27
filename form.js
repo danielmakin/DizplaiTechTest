@@ -20,7 +20,6 @@ fs.readFile("data.json", 'utf8', (err, data) => {
         return;
     }
     jdata = JSON.parse(data);
-    console.log(jdata);
 });
 
 // Route to render the HTML form
@@ -37,7 +36,6 @@ app.get('/api/question', (req, res)=> {
 app.post('/form/results', (req, res) =>{
 
     const new_result = req.body;
-    console.log('Form data received:', new_result);
 
     let all_results;
 
@@ -47,7 +45,49 @@ app.post('/form/results', (req, res) =>{
             return;
         }
         all_results = JSON.parse(data);
-        process_results(all_results, new_result)
+        process_results(all_results, new_result);
+
+        res.status(200).json({ ok: true });
+    });
+});
+
+app.get('/api/results', (req, res) => {
+
+    const optionId = req.query.optionId;
+    const pollId = req.query.pollId;
+
+    // Do something with the received data
+
+    let all_results;
+    fs.readFile("results.json", 'utf8', (err, data) => {
+        let jdata;
+        if (err) {
+            console.error('Error reading file:', err);
+            return;
+        }
+        try {
+            jdata = JSON.parse(data);
+            console.log(data);
+          } catch (error) {
+            console.error('Error parsing JSON:', error.message);
+          }
+
+        poll = jdata.polls[jdata.polls.findIndex(obj => obj.pollId === parseInt(pollId))];
+        
+
+
+        // Now Calculate the Percentages
+        total = 0;
+
+        poll.options.forEach(element => {
+            total = total + parseInt(element.optionChosen);
+        });
+
+        poll.options.forEach(element => {
+            element.optionChosen = Math.round((element.optionChosen / total) * 100)
+        });
+
+        res.json(poll.options);
     });
 });
 
@@ -67,7 +107,7 @@ function process_results(all_results, new_result){
     const jsonString = JSON.stringify(all_results, null, 2); // Convert JSON object to string with indentation
 
     fs.writeFile('results.json', jsonString, 'utf8', (err) => {
-    if (err) {console.error('Error writing JSON file:', err);}
+    if (err) {return err.code;} else {return 200;}
     });
 }
 

@@ -1,6 +1,11 @@
 function submitForm(){
-    // Get form data
-    var selectedOption = document.querySelector('input[name="options"]:checked').id;
+    // Checks Whether a RadioButton is Selected, Tells User if One is Not
+    try{
+        var selectedOption = document.querySelector('input[name="options"]:checked').id;
+    }catch{
+        alert("Please Select an Option");
+        return;
+    }
     var pollId = document.getElementById("pollId")
     document.getElementById("question").textContent = "Thank you for your response";
      // Convert form data to JSON object
@@ -40,7 +45,7 @@ function submitForm(){
                     // Check that they exist and set them
                     if (radioButton && label) {
                         radioButton.value = option.optionText;
-                        label.textContent = label.textContent + ": " + option.optionChosen + "%";
+                        label.textContent = option.optionText + ": " + option.perc + "%";
                     } else {
                         console.error('Radio button or label not found for option ' + (index + 1));
                     }

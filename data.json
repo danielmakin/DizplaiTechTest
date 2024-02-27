@@ -1,4 +1,5 @@
 {
+    "no_questions": 2,
     "polls": [ {
         "pollId": 1,
         "pollName": "Premier League Winner",
@@ -15,6 +16,37 @@
             {
                 "optionId": 3,
                 "optionText": "Liverpool"
+            },
+            {
+                "optionId": 4,
+                "optionText": "Villa"
             }]
-        }]
+        },
+        {
+        "pollId": 2,
+        "pollName": "Champions League Winner",
+        "question": "Who will win the Champions League?",
+        "options": [
+            {
+                "optionId": 1,
+                "optionText": "Dortmund"
+            },
+            {
+                "optionId": 2,
+                "optionText": "Man City"
+            },
+            {
+                "optionId": 3,
+                "optionText": "Real Madrid"
+            },
+            {
+                "optionId": 4,
+                "optionText": "Barcelona"
+            },
+            {
+                "optionId": 5,
+                "optionText": "Liverpool"
+            }]
+        }
+    ]
 }

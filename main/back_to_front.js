@@ -28,6 +28,11 @@ function update_radio_buttons(){
                 }
         });
 
+        for (let i=options.length + 1; i<=5; i++){
+            document.getElementById(i).remove();
+            document.querySelector('label[for="' + (i) + '"]').style.display = "none";
+        }
+
     })
     .catch(error => console.error("Error Fetching Data: ". error));
 }

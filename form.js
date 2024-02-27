@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs');
+const { stringify } = require('querystring');
 const port = process.env.PORT || 5000;
 
 const app = express();
@@ -28,8 +29,10 @@ app.get('/form', (req, res) => {
 });
 
 app.get('/api/question', (req, res)=> {
+    no = jdata.no_questions;
     polls = jdata.polls;
-    poll = polls[polls.findIndex(obj => obj.pollId === 1)];
+    q = Math.floor(Math.random() * (no)) + 1
+    poll = polls[polls.findIndex(obj => obj.pollId === q)];
     res.json(poll);
 });
 
@@ -67,7 +70,6 @@ app.get('/api/results', (req, res) => {
         }
         try {
             jdata = JSON.parse(data);
-            console.log(data);
           } catch (error) {
             console.error('Error parsing JSON:', error.message);
           }
@@ -84,7 +86,12 @@ app.get('/api/results', (req, res) => {
         });
 
         poll.options.forEach(element => {
-            element.optionChosen = Math.round((element.optionChosen / total) * 100)
+            element["perc"] = String(Math.round((element.optionChosen / total) * 100));
+        });
+
+        // Sort the Elements
+        poll.options.sort(function(a, b) {
+            return b.perc - a.perc;
         });
 
         res.json(poll.options);
@@ -102,9 +109,8 @@ function process_results(all_results, new_result){
 
     // Modify the Item and Write to a File
     options[index].optionChosen = options[index].optionChosen + 1;
-    console.log(all_results);
 
-    const jsonString = JSON.stringify(all_results, null, 2); // Convert JSON object to string with indentation
+    const jsonString = JSON.stringify(all_results, null, 2);
 
     fs.writeFile('results.json', jsonString, 'utf8', (err) => {
     if (err) {return err.code;} else {return 200;}

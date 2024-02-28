@@ -9,7 +9,7 @@
     * *JavaScript* will also be used to connect front and back end.
 
 ## Front-end Requirements (MVP)
-* Consist of 2 Front End Pages:
+* Consists of 2 Front End Pages:
     * Voting Page
         * Display the Poll to the User
         * Let the User Select an Option and Submit.
@@ -55,6 +55,6 @@
         * *options* (options[])
 
 ## Choice of Technologies
-* Node.js and JavaScript have been used to support *Non-Blocking* Assigments and recieve fast poll results.
+* Node.js and JavaScript have been used to support *Non-Blocking* Assignments and recieve fast poll results.
 * HTML, CSS Have been Used as the Syling Does not need to be Perfect, the main goal is functionality.
 *(Note: This is Subject to Change as Development Progresses)*

@@ -11,8 +11,8 @@
 * *index.html*: Where the Visual Front end of the System is housed.
 ## Data Files
 * *data.json*: Contains the Polls (as given in the specification)
-* *results.json*: Where the results of the Poll is placed.
+* *results.json*: Where the results of the Poll are placed.
     * This is similar to *data.json* and was included to maintain the specification of *data.json*
 ## Evaluation Files
 * *Requirements.md*: Set out the Goals of the Project, Written before Development.
-* *Evaluation.md*: Explains How well the Goals were achieved, written after development. Also answers questions put forward in initial document.
+* *Evaluation.md*: Explains How well the Goals were achieved, written after development. Also answer questions put forward in the initial document.

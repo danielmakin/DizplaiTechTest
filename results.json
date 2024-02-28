@@ -6,7 +6,7 @@
         {
           "optionId": 1,
           "optionText": "Manchester City",
-          "optionChosen": 64
+          "optionChosen": 65
         },
         {
           "optionId": 2,
@@ -16,7 +16,7 @@
         {
           "optionId": 3,
           "optionText": "Liverpool",
-          "optionChosen": 16
+          "optionChosen": 23
         },
         {
           "optionId": 4,
@@ -36,7 +36,7 @@
         {
           "optionId": 2,
           "optionText": "Man City",
-          "optionChosen": 2
+          "optionChosen": 4
         },
         {
           "optionId": 3,
@@ -51,7 +51,7 @@
         {
           "optionId": 5,
           "optionText": "Liverpool",
-          "optionChosen": 3
+          "optionChosen": 6
         }
       ]
     }

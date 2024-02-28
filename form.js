@@ -5,6 +5,7 @@ const { stringify } = require('querystring');
 const port = process.env.PORT || 5000;
 
 const app = express();
+module.exports = app; // Export the Express app (For Testing)
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
 
@@ -27,6 +28,7 @@ fs.readFile("data.json", 'utf8', (err, data) => {
 // Route to render the HTML form
 app.get('/form', (req, res) => {
     res.sendFile(__dirname + '/main/index.html');
+    res.status(200);
 });
 
 app.get('/api/question', (req, res)=> {
@@ -84,7 +86,11 @@ app.get('/api/results', (req, res) => {
           }
 
         // Obtain the Poll that The User Has Voted on
-        poll = jdata.polls[jdata.polls.findIndex(obj => obj.pollId === parseInt(pollId))];
+        try{
+            poll = jdata.polls[jdata.polls.findIndex(obj => obj.pollId === parseInt(pollId))];
+        }catch{
+            console.log("Poll Does Not Exist.")
+        }
         
 
 

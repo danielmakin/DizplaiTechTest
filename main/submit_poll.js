@@ -54,7 +54,10 @@ function submitForm(){
                 // This is so that the outputted results don't appear as radiobuttons
                 radioButton.checked = false;
                 radioButton.disabled = true;
-            });
+            })
+        })
+        .catch(err => {
+            alert("There Has Been an Unexpected Issue: " + err.message);
         });
 
     });

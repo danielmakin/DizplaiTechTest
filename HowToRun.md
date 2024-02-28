@@ -2,6 +2,7 @@
 
 ## How to Run
 * The Project Can Be Run Using the Command: **node form.js**
+* Visit the URL: *http://localhost:5000/form*
 ## Explanation of Code Files
 * *form.js*: Contains the Majority of the Node Logic.
 * *main/set_poll*: Handles Getting the Data for the Poll.

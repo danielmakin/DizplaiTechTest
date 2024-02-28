@@ -23,7 +23,7 @@
             * Ensure Results are Ordered
             * **No** Decimal Places
 * Styling:
-    * The **MVP** Will Feature Minimal Styling
+    * The **MVP** Will Feature Styling
 * Technologies:
     * *HTML, CSS, JavaScript*
 
